@@ -1,12 +1,12 @@
 import {TestBed, ComponentFixture} from '@angular/core/testing';
 import {Component} from '@angular/core';
 import {createGenericTestComponent} from '../../../test/util/helpers';
-import {NglImagesModule} from './module';
+import {NglFilesModule} from './module';
 
 const createTestComponent = (html?: string, detectChanges?: boolean) =>
   createGenericTestComponent(TestComponent, html, detectChanges) as ComponentFixture<TestComponent>;
 
-function getFigureElement(element: HTMLElement) {
+function getFileElement(element: HTMLElement) {
   return element.firstElementChild;
 }
 
@@ -16,13 +16,13 @@ function getFigureCaptionElement(element: HTMLElement) {
 
 describe('Figure Component', () => {
 
-  beforeEach(() => TestBed.configureTestingModule({declarations: [TestComponent], imports: [NglImagesModule]}));
+  beforeEach(() => TestBed.configureTestingModule({ declarations: [TestComponent], imports: [NglFilesModule]}));
 
   it('should render the figure element with default values', () => {
     const fixture = createTestComponent();
-    const figure = getFigureElement(fixture.nativeElement);
-    expect(figure).toHaveCssClass('slds-image');
-    expect(figure).toHaveCssClass('slds-image--card');
+    const file = getFileElement(fixture.nativeElement);
+    expect(file).toHaveCssClass('slds-image');
+    expect(file).toHaveCssClass('slds-image--card');
   });
 
   it('should render the caption element based on title', () => {
