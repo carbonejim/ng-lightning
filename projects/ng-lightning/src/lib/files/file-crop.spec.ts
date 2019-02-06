@@ -1,14 +1,14 @@
 import {TestBed, ComponentFixture} from '@angular/core/testing';
 import {Component} from '@angular/core';
 import {createGenericTestComponent} from '../../../test/util/helpers';
-import {NglImagesModule} from './module';
+import {NglFilesModule} from './module';
 
 const createTestComponent = (html?: string, detectChanges?: boolean) =>
   createGenericTestComponent(TestComponent, html, detectChanges) as ComponentFixture<TestComponent>;
 
 describe('Figure Crop', () => {
 
-  beforeEach(() => TestBed.configureTestingModule({declarations: [TestComponent], imports: [NglImagesModule]}));
+  beforeEach(() => TestBed.configureTestingModule({declarations: [TestComponent], imports: [NglFilesModule]}));
 
   it('should set ratio based on input', () => {
     const fixture = createTestComponent();
